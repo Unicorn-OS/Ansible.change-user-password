@@ -1,0 +1,12 @@
+- name: Futureproof
+  ansible.builtin.apt:
+    name: python3-passlib
+    state: present
+  # Do i install this on the Node or the ansible_host?
+
+- name: Change user password in Vagrant
+  ansible.builtin.user:
+    name: vagrant
+    password: "{{ 'u' | password_hash('sha512', 'tmpsalt') }}"
+  when: ansible_user_id == 'vagrant'
+  become: true
