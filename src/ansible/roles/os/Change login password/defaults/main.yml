@@ -1,0 +1,3 @@
+new_password: 'u'
+
+user: "{{ lookup('ansible.builtin.env', 'USER') }}"

@@ -4,10 +4,11 @@
     state: present
   # Do i install this on the Node or the ansible_host?
 
+
 - name: Change user password in Vagrant
   ansible.builtin.user:
-    name: vagrant
+    name: "{{ user }}"
     password: "{{ new_password | password_hash('sha512', 'tmpsalt') }}"
-#    password: "{{ 'u' | password_hash('sha512', 'tmpsalt') }}"
   when: ansible_user_id == 'vagrant'
   become: true
+#    password: "{{ 'u' | password_hash('sha512', 'tmpsalt') }}"
