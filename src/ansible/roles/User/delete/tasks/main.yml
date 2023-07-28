@@ -1,0 +1,12 @@
+- name: Delete user
+  ansible.builtin.user:
+    name: "{{del_user}}"
+    state: absent
+    force: "{{force_delete}}"
+  become: true
+
+- name: Delete matching group
+  ansible.builtin.group:
+    name: "{{del_user}}"
+    state: absent
+  become: true

@@ -1,8 +1,14 @@
 - hosts: maas
   vars:
-    new_user: me #ubuntu
+    new_user: ava #ubuntu
   roles:
   - User/.get
   - User/create
   - User/change login password
   - User/sudoers
+
+- hosts: maas
+  vars:
+    del_user: ava #ubuntu
+  roles:
+  - User/delete
