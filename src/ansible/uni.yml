@@ -3,6 +3,6 @@
     new_user: me
   roles:
   - User/.get
-  # - User/create
-  # - User/change login password
+  - User/create
+  - User/change login password
   - User/sudoers
