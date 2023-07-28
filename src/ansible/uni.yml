@@ -1,6 +1,6 @@
 - hosts: maas
   vars:
-    new_user: ubuntu
+    new_user: me #ubuntu
   roles:
   - User/.get
   - User/create

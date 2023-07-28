@@ -1,5 +1,13 @@
+- name: Create matching group
+  ansible.builtin.group:
+    name: "{{new_user}}"
+    state: present
+  become: true
+
 - name: Create user
   ansible.builtin.user:
     name: "{{new_user}}"
     state: present
+    groups: "{{new_user}}"
+    append: yes
   become: true
