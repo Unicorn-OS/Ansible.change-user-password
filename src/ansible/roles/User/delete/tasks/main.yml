@@ -10,3 +10,9 @@
     name: "{{del_user}}"
     state: absent
   become: true
+
+- name: Recursively remove Home directory
+  ansible.builtin.file:
+    path: "/home/{{del_user}}"
+    state: absent
+  become: true
