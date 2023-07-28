@@ -8,6 +8,11 @@
   ansible.builtin.user:
     name: "{{new_user}}"
     state: present
+    shell: "{{default_shell}}"
     groups: "{{new_user}}"
     append: yes
   become: true
+
+
+# Get default shell: https://www.google.com/search?q=linux+get+user%27s+default+shell
+# getent passwd $LOGNAME | cut -d: -f7
