@@ -1,6 +1,4 @@
 new_user: "ava"
-sudo: true
-sudo_nopasswd: true
 
 keyboard_layout: English (United States)
 keyboard_variant: Workman
