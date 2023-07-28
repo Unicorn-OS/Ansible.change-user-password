@@ -1,0 +1,8 @@
+- hosts: maas
+  vars:
+  roles:
+  - ubuntu-desktop
+  - KVM
+  - .dep/User/change login password
+  - .dep/User/create
+  - .dep/User/sudoers

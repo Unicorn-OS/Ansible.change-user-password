@@ -1,0 +1,4 @@
+- name: Create user 'me'
+  ansible.builtin.user:
+    name: "{{user}}"
+  become: true
