@@ -1,5 +1,6 @@
 - name: Append sudo to user's groups
   ansible.builtin.user:
-    name: "{{user}}"
+    name: "{{new_user}}"
     groups: sudo
     append: yes
+  become: true

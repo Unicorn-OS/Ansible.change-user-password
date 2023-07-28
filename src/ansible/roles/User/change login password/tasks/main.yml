@@ -8,8 +8,7 @@
 
 - name: Change user password in Vagrant
   ansible.builtin.user:
-    name: "{{ user }}"
+    name: "{{ new_user }}"
     password: "{{ new_password | password_hash('sha512', 'tmpsalt') }}"
-  when: ansible_user_id == 'vagrant'
   become: true
-#    password: "{{ 'u' | password_hash('sha512', 'tmpsalt') }}"
+# works:    password: "{{ 'u' | password_hash('sha512', 'tmpsalt') }}"

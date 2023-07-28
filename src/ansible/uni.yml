@@ -1,7 +1,7 @@
-- hosts: maas
+- hosts: maas #, builder
   vars:
-    user: me
+    new_user: ava
   roles:
-  - .dep/User/create
-  - .dep/User/change login password
-  - .dep/User/sudoers
+  - User/create
+  - User/change login password
+  - User/sudoers
